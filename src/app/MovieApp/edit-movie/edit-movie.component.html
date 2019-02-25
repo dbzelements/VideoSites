@@ -1,0 +1,57 @@
+
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+           <button class="btn btn-outline-success my-2 my-sm-0"  >Cancel</button>
+    </form>
+  </nav>
+
+  <div class="container">
+      <div class="row"  style="position:right;margin: 10px;">
+        
+          <div class="col-sm">
+              <label >Name</label>
+          </div>
+          <div class="col-sm">
+              <input  #NameValue class="form-control mr-sm-2" type="text" > 
+          </div>
+          
+      </div>
+      <div class="row"  style="position:right;margin: 10px;">
+           
+          <div class="col-sm">
+              <label>Category</label>
+          </div>
+          <div class="col-sm">
+              <select #CategoryValue   class="form-control">
+                <option *ngFor="let cat of categories" [value]="cat.id">
+                    {{cat.categoryName}}
+                </option>
+            </select>
+           
+          </div>
+          
+      </div>
+      <div class="row"  style="position:right;margin: 10px;">
+        
+          <div class="col-sm">
+              <label>Rating</label>
+          </div>
+          <div class="col-sm">
+              <input #RateValue class="form-control mr-sm-2" type="text" app-restrict-input="integer">
+          </div>
+        
+      </div>
+      <div class="row"  style="position:right;margin: 10px;">
+       
+          <div class="col-sm">
+            <label *ngIf="showError"> {{ errorMessage}} </label> 
+          </div>
+          <div class="col-sm">
+              <button class="btn btn-outline-success my-2 my-sm-0" (click)="EditNew(NameValue.value,CategoryValue.value,RateValue.value)" >Submit</button>
+          </div>
+         
+      </div>
+        
+  </div>
+  
+    

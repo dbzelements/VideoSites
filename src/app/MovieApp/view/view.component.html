@@ -1,0 +1,72 @@
+
+<app-view-header></app-view-header>
+
+<section *ngIf="AddVisible">
+
+    <app-add-movie></app-add-movie>
+</section>
+
+<section *ngIf="EditVisble">
+
+        <app-edit-movie></app-edit-movie>
+</section>
+
+<section *ngIf="GroupVisble">
+
+        <app-grouped></app-grouped>
+</section>
+
+
+<section *ngIf="ViewVisble">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+        <input #FilterValue class="form-control mr-sm-2"  placeholder="Search" aria-label="Search">
+        <button style="position:right;margin: 10px;" class="btn btn-outline-success my-2 my-sm-0" (click)="Filter(FilterValue.value)">Filter</button>
+        <button style="position:right;margin:10px;" class="btn btn-outline-success my-2 my-sm-0" (click)="NavAddPage()" >Add Movie</button>
+        <button style="position:right;margin: 10px;" class="btn btn-outline-success my-2 my-sm-0" (click)="NavGoupPage()" >Rating List</button>
+        </form>
+    </nav>
+    <div  class="container" >
+        <div class="row">
+            <div class="col-sm">
+                <h3>NAME</h3>
+            </div>
+            <div class="col-sm">
+                <h3>CATEGORY</h3>
+            </div>
+            <div class="col-sm">
+                <h3>RATING</h3>
+            </div>
+            <div class="col-sm">
+              
+            </div>
+        </div>
+    </div>
+
+
+    <div  class="container" *ngIf="movies">
+        <div class="row" *ngFor="let Movie of movies"> 
+            <div class="col-sm">
+            
+                <label >{{ Movie.title }}</label>
+            </div>
+
+            <div class="col-sm">
+            
+                <label >{{ Movie.categoryName }}</label>
+            </div>
+
+            <div class="col-sm">
+        
+                <label >{{ Movie.rating }}</label>
+            </div>
+            <div class="col-sm">
+        
+                <button style="border: 1px solid black; border-radius: 8px; margin:5px;" class="btn " type="submit" (click)="tobeDeleted(Movie.id)">Delete</button>
+                <button style="border: 1px solid black; border-radius: 8px; margin:5px;" class="btn " type="submit" (click)="tobeEdited(Movie.id)">Edit</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+    

@@ -1,0 +1,81 @@
+<section>
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <button class="btn btn-outline-success my-2 my-sm-0"  >Cancel</button>
+      </form>
+    </nav>
+    <div  class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>1</h3>
+            </div>
+            <div class="col-sm">
+                <h3>2</h3>
+            </div>
+            <div class="col-sm">
+                <h3>3</h3>
+            </div>
+            <div class="col-sm">
+                <h3>4</h3>
+            </div>
+            <div class="col-sm">
+                <h3>5</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div  class="container">
+        <div class="row" > 
+            <div class="col-sm">
+            
+               <ul  *ngIf="movies1">
+                 <li *ngFor="let Movie of movies1">
+                      <p>{{  Movie.title }} </p>
+                 </li>
+
+               </ul>
+            </div>
+
+            <div class="col-sm">
+                <ul  *ngIf="movies2">
+                    <li *ngFor="let Movie of movies2">
+                         <p>{{  Movie.title }} </p>
+                    </li>
+   
+                  </ul>
+               
+            </div>
+
+            <div class="col-sm">
+                <ul  *ngIf="movies3">
+                    <li *ngFor="let Movie of movies3">
+                         <p>{{ Movie.title }} </p>
+                    </li>
+   
+                  </ul>
+                
+            </div>
+            <div class="col-sm">
+                <ul  *ngIf="movies4">
+                    <li *ngFor="let Movie of movies4">
+                         <p>{{  Movie.title }}</p>
+                    </li>
+   
+                  </ul>
+                
+            </div>
+
+            <div class="col-sm">
+                <ul  *ngIf="movies5">
+                    <li *ngFor="let Movie of movies5">
+                         <p>{{ Movie.title }} </p>
+                    </li>
+   
+                  </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</section>
